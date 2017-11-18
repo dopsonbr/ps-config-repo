@@ -1,0 +1,20 @@
+zuul:
+  host:
+    connect-timeout-millis: 50000
+    socket-timeout-millis: 500000
+  routes:
+    ps-sample:
+      serviceId: ps-sample
+      path: /ps-sample/**
+      stripPrefix: false
+
+  ribbon:
+    ConnectionTimeout: 50000
+    ReadTimeout: 50000
+    MaxAutoRetries: 0
+    eureka:
+      enabled: false
+
+  ps-sample:
+    ribbon:
+      listOfServers: web_service
