@@ -3,9 +3,9 @@ zuul:
     connect-timeout-millis: 50000
     socket-timeout-millis: 500000
   routes:
-    ps-sample:
-      serviceId: ps-sample
-      path: /ps-sample/**
+    service-a:
+      serviceId: service-a
+      path: /service-a/**
       stripPrefix: false
 
   ribbon:
@@ -15,6 +15,6 @@ zuul:
     eureka:
       enabled: false
 
-  ps-sample:
+  service-a:
     ribbon:
-      listOfServers: web_service
+      listOfServers: service_a:8080
