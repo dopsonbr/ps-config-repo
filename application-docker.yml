@@ -14,19 +14,8 @@ zuul:
   host:
     connect-timeout-millis: 50000
     socket-timeout-millis: 500000
-  routes:
-    service-a:
-      serviceId: service-a
-      path: /service-a/**
-      stripPrefix: false
 
   ribbon:
     ConnectionTimeout: 50000
     ReadTimeout: 50000
     MaxAutoRetries: 0
-    eureka:
-      enabled: false
-
-  service-a:
-    ribbon:
-      listOfServers: service_a:8080
